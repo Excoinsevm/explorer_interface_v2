@@ -17,7 +17,7 @@ import outputRootsIcon from 'icons/output_roots.svg';
 import privateTagIcon from 'icons/privattags.svg';
 import publicTagIcon from 'icons/publictags.svg';
 import apiDocsIcon from 'icons/restAPI.svg';
-import rpcIcon from 'icons/RPC.svg';
+// import rpcIcon from 'icons/RPC.svg';
 import statsIcon from 'icons/stats.svg';
 import tokensIcon from 'icons/token.svg';
 import topAccountsIcon from 'icons/top-accounts.svg';
@@ -120,16 +120,16 @@ export default function useNavItems(): ReturnType {
         icon: graphQLIcon,
         isActive: pathname === '/graphiql',
       } : null,
-      {
-        text: 'RPC API',
-        icon: rpcIcon,
-        url: 'https://docs.blockscout.com/for-users/api/rpc-endpoints',
-      },
-      {
-        text: 'Eth RPC API',
-        icon: rpcIcon,
-        url: ' https://docs.blockscout.com/for-users/api/eth-rpc',
-      },
+      // {
+      //   text: 'RPC API',
+      //   icon: rpcIcon,
+      //   url: 'https://docs.blockscout.com/for-users/api/rpc-endpoints',
+      // },
+      // {
+      //   text: 'Eth RPC API',
+      //   icon: rpcIcon,
+      //   url: ' https://docs.blockscout.com/for-users/api/eth-rpc',
+      // },
     ].filter(Boolean);
 
     const mainNavItems: ReturnType['mainNavItems'] = [
@@ -146,13 +146,13 @@ export default function useNavItems(): ReturnType {
         isActive: pathname.startsWith('/token'),
       },
       config.features.marketplace.isEnabled ? {
-        text: 'Apps',
+        text: 'Ecosystem',
         nextRoute: { pathname: '/apps' as const },
         icon: appsIcon,
         isActive: pathname.startsWith('/app'),
       } : null,
       config.features.stats.isEnabled ? {
-        text: 'Charts & stats',
+        text: 'Chain Stats',
         nextRoute: { pathname: '/stats' as const },
         icon: statsIcon,
         isActive: pathname === '/stats',
